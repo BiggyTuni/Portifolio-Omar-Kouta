@@ -1,4 +1,4 @@
-/* General Reset */
+/*! General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@
     color: #333;
   }
   
-  /* Header */
+  /*! Header */
   header {
     display: flex;
     justify-content: space-between;
@@ -21,12 +21,12 @@
     background-color: #333;
     color: #fff;
   }
-  
-  header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
+
+  .top-bar-logo {
+    height: 60px;  /* Adjust the size of your logo */
+    width: auto;   /* Maintain the aspect ratio */
+    object-fit: contain; /* Ensures logo doesn't stretch */
+}  
   header nav ul {
     display: flex;
     list-style: none;
@@ -46,7 +46,29 @@
     color: #00bcd4;
   }
   
-  /* Home Section */
+/*! Download CV */
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* color changes for  downlaod button  */
+header nav ul li a[download] {
+    color: #4caf50; 
+}
+
+header nav ul li a[download]:hover {
+    color: #388e3c; 
+}
+
+
+
+  /*! Home Section */
   #home {
     position: relative;
     height: 100vh;
@@ -56,7 +78,7 @@
     overflow: hidden;
   }
   
-  /* Background Scenery (with blur effect) */
+  /*! Background Scenery (with blur effect) */
   .background {
     position: absolute;
     top: 0;
@@ -64,25 +86,30 @@
     width: 100%;
     height: 100%;
     background: url('scenery.jpg') no-repeat center center/cover;
-    filter: blur(8px); /* Blur effect */
+    background-position: top right;
+    filter: blur(10px); /* Blur effect */
     z-index: 1;
   }
   
-  /* Logo Container (sharp logo on top of background) */
+  /* Logo Container */
   .logo-container {
     position: relative;
     z-index: 2; /* Place above the blurred background */
     text-align: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Ensure it takes up full height for vertical centering */
   }
   
-  .logo-container img {
-    width: 200px; /* Adjust the size of your logo */
-    height: 200px;
-    border-radius: 50%; /* Optional: Make it circular */
-    border: 5px solid #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+.logo-container img {
+  width: 250px; /* Increase size */
+  height: 250px; /* Increase size */
+  border-radius: 50%; /* Optional: Keep circular if desired */
+  border: 5px solid #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
   }
   
   .logo-container img:hover {
@@ -133,7 +160,7 @@
   }
   
   .skill-item img {
-    width: 100%;
+    width: 80%;
   }
   
   .skill-item:hover {
@@ -157,3 +184,141 @@
     display: block;
   }
   
+  /* Projects Section */
+#projects {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-item {
+  width: 200px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.project-item:hover {
+  transform: translateY(-10px);
+  background-color: #00bcd4;
+  color: white;
+}
+
+
+.projects-wrapper {
+  overflow: hidden; /* Ensures only visible items are shown */
+  width: 100%;
+  position: relative;
+}
+
+.projects-container {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth scrolling */
+}
+
+.project-item {
+  min-width: 300px; /* Ensure each project item has a fixed width */
+  margin: 0 1rem; /* Add spacing between items */
+}
+
+
+.navigation-arrows {
+  margin-top: 1rem;
+}
+
+.arrow {
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 0 1rem;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.arrow:hover {
+  color: #00bcd4;
+}
+
+
+
+
+/*! Contact Me Section */
+#contact {
+  padding: 2rem;
+  background-color: #f1f1f1;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 400px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-form button {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #0097a7;
+}
+
+.contact-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-details .detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-details .icon {
+  font-size: 2rem;
+  color: #00bcd4;
+}
