@@ -9,12 +9,15 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="logo">Logo</div>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" class="top-bar-logo">
+    </div>
     <nav>
       <ul>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="Omar Kouta CV.pdf" download>Download CV</a></li>
       </ul>
     </nav>
   </header>
@@ -29,7 +32,7 @@
     <!-- Logo on top -->
     <div class="logo-container">
       <a href="https://github.com" target="_blank">
-        <img src="logo.jpg" alt="Logo">
+        <img src="logo.png" alt="Logo">
       </a>
     </div>
   </section>
@@ -68,6 +71,69 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-wrapper">
+      <div class="projects-container">
+        <div class="project-item">
+          <h3>Calculator</h3>
+        </div>
+        <div class="project-item">
+          <h3>Tic Tac Toe</h3>
+        </div>
+        <div class="project-item">
+          <h3>Weather App</h3>
+        </div>
+        <div class="project-item">
+          <h3>Portfolio</h3>
+        </div>
+        <div class="project-item">
+          <h3>Blog Website</h3>
+        </div>
+      </div>
+    </div>
+    <div class="navigation-arrows">
+      <span class="arrow left-arrow">&lt;</span>
+      <span class="arrow right-arrow">&gt;</span>
+    </div>
+  </section>
+  
+
+<!-- Contact Me Section -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-container">
+    <!-- Contact Form -->
+    <form class="contact-form">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your Email">
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your Message"></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+
+    <!-- Contact Details -->
+    <div class="contact-details">
+      <div class="detail">
+        <span class="icon">📞</span>
+        <p>+44 07883275243</p>
+      </div>
+      <div class="detail">
+        <span class="icon">📧</span>
+        <p>omarkouta04@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="script.js"></script>
 </body>
 </html>
