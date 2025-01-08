@@ -68,16 +68,38 @@ header nav ul li a[download]:hover {
   color: #388e3c; 
 }
 
+/* Shared Background Wrapper */
+.background-wrapper {
+  position: relative;
+  background: url('black and white.jpg') no-repeat center center/cover;
+  width: 100%;
+  overflow: hidden; /* Prevent any child overflow issues */
+}
 
+.background-wrapper {
+  position: relative;
+  background: url('black and white.jpg') no-repeat center center/cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stacks the child sections vertically */
+}
+.background-wrapper {
+  min-height: 100%; /* Ensures it grows to fit all content */
+}
+.background-wrapper::after {
+  content: '';
+  display: block;
+  clear: both;
+}
 
 /*! Home Section */
 #home {
-  position: relative;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 /*! Background Scenery (with blur effect) */
@@ -118,21 +140,31 @@ transition: transform 0.3s ease-in-out;
   transform: scale(1.6); /* Slight zoom effect on hover */
 }
 
-/* ! About Section */
+/* About Section */
 #about {
-  padding: 2rem 1rem;
+  padding: 4rem 1rem; /* Add vertical padding */
   display: flex;
-  justify-content: center;
-  background-color: #f8f9fa; /* Matches site vibe */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically if needed */
+  position: relative;
+  z-index: 2;
+  background: transparent; /* Ensure no conflicting background color */
 }
 
+/* About Container */
 .about-container {
   display: flex;
+  flex-direction: row; /* Keep the image and text side by side */
   gap: 2rem;
-  align-items: stretch; /* Ensure both containers stretch to the same height */
-  max-width: 1200px;
+  align-items: stretch; /* Ensure both containers are the same height */
+  max-width: 1200px; /* Limit the width of the content */
   width: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
 
 @media (max-width: 768px) {
   .about-container {
