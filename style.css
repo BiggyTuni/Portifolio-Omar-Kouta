@@ -10,6 +10,8 @@ body {
   line-height: 1.6;
   background-color: #f8f9fa;
   color: #333;
+  overflow-x: hidden; /* Ensures no horizontal scrollbars */
+
 }
 
 /*! Header */
@@ -197,14 +199,13 @@ transition: transform 0.3s ease-in-out;
 .skills-container {
   display: flex;
   justify-content: center;
-  gap: 1rem; /* Reduce gap to prevent overflow */
-  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
-  padding: 0 1rem; /* Add padding to prevent edge clipping */
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .skill-item {
   position: relative;
-  width: 80px;
+  width: 100px;
   cursor: pointer;
   transition: transform 0.3s;
 }
