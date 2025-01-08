@@ -362,24 +362,3 @@ color: #00bcd4;
   background-color: #0097a7;
 }
 
-/*? Fixes for phones and smaller devices  */
-@media (max-width: 768px) {
-  .about-container,
-  .projects-container,
-  .skills-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .photo img,
-  .bubble-container,
-  .project-item,
-  .skill-item {
-    width: 100%; /* Make items stack properly */
-  }
-
-  .skills-container {
-    padding: 0 1rem; /* Prevent skills from touching screen edges */
-  }
-}
