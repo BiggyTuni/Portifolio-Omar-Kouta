@@ -269,71 +269,89 @@ transition: transform 0.3s ease-in-out;
 
 /* Projects Section */
 #projects {
-padding: 2rem;
-background-color: #f9f9f9;
-text-align: center;
+  padding: 3rem; /* Increase padding for better spacing */
+  background-color: #f9f9f9; /* Neutral background */
+  text-align: center;
+  height: 400px; /* Increase height */
 }
 
+
+/* Projects Wrapper */
+.projects-wrapper {
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Hide overflow */
+  position: relative;
+  width: 100%;
+  max-width: 1400px; /* Increase max width */
+  margin: 0 auto;
+}
+
+
+/* Projects Container */
 .projects-container {
-display: flex;
-justify-content: center;
-gap: 2rem;
+  display: flex;
+  gap: 30px; /* Adjust spacing between projects */
+  transition: transform 0.5s ease;
+  padding: 1.5rem 0; /* Add more vertical padding */
 }
 
+
+/* Individual Project Item */
 .project-item {
-width: 200px;
-height: 250px;
-display: flex;
-justify-content: center;
-align-items: center;
-border: 2px solid #333;
-border-radius: 10px;
-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease, background-color 0.3s ease;
-cursor: pointer;
+  min-width: 350px; /* Increase width */
+  height: 250px; /* Increase height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  margin: 1rem; /* Adjust spacing between items */
 }
 
 .project-item:hover {
-transform: translateY(-10px);
-background-color: #00bcd4;
-color: white;
+  transform: scale(1.2); /* Slightly larger hover effect */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
 }
 
-
-.projects-wrapper {
-overflow: hidden; /* Ensures only visible items are shown */
-width: 100%;
-position: relative;
+/* Navigation Arrows */
+.navigation-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 10;
 }
 
-.projects-container {
-display: flex;
-transition: transform 0.5s ease; /* Smooth scrolling */
+.navigation-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.project-item {
-min-width: 300px; /* Ensure each project item has a fixed width */
-margin: 0 1rem; /* Add spacing between items */
+.navigation-arrow span {
+  font-size: 1.5rem;
+  color: #333;
 }
 
-
-.navigation-arrows {
-margin-top: 1rem;
+.left-arrow {
+  left: 10px;
 }
 
-.arrow {
-font-size: 2rem;
-cursor: pointer;
-margin: 0 1rem;
-color: #333;
-transition: color 0.3s;
+.right-arrow {
+  right: 10px;
 }
-
-.arrow:hover {
-color: #00bcd4;
-}
-
-
 
 
 /* Contact Section Styling */

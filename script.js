@@ -1,3 +1,5 @@
+
+
 // Add dynamic hover or click effects for the skills section
 document.addEventListener("DOMContentLoaded", () => {
   const skillItems = document.querySelectorAll(".skill-item");
@@ -16,28 +18,55 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Select the projects container and navigation arrows
-const leftArrow = document.querySelector(".left-arrow");
-const rightArrow = document.querySelector(".right-arrow");
-const projectsContainer = document.querySelector(".projects-container");
+document.addEventListener("DOMContentLoaded", () => {
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
+  const projectsContainer = document.querySelector(".projects-container");
+  const projectItems = Array.from(projectsContainer.children);
 
-// Scroll width of one project item 
-const scrollAmount = 360 ; 
+  // Dynamically calculate project width including gap
+  const projectWidth = projectItems[0].offsetWidth + 35; // Includes gap
+  const totalProjects = projectItems.length;
+  let currentIndex = 0; // Tracks the current project
 
-let scrollPosition = 0;
+  const updateProjectPosition = () => {
+    const containerWidth = projectsContainer.offsetWidth; // Total visible width
+    const center_offset = (containerWidth - projectWidth) / 2; // Centering offset
+    const scrollPosition = currentIndex * projectWidth; // Position of the selected project
+    const translateX = center_offset - scrollPosition; // Calculate TranslateX
 
+    // Log debugging information
+    console.log("Current Index:", currentIndex);
+    console.log("TranslateX:", translateX);
+    console.log("Project Width:", projectWidth);
 
+    projectsContainer.style.transition = "transform 0.5s ease";
+    projectsContainer.style.transform = `translateX(${translateX}px)`;
+  };
 
-leftArrow.addEventListener("click", () => {
-  scrollPosition = Math.max(0, scrollPosition - scrollAmount);
-  projectsContainer.style.transform = `translateX(-${scrollPosition}px)`;
+  rightArrow.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalProjects; // Loop back to start
+    updateProjectPosition();
+  });
+
+  leftArrow.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalProjects) % totalProjects; // Loop to end
+    updateProjectPosition();
+  });
+
+  // Handle resizing dynamically
+  window.addEventListener("resize", () => {
+    projectsContainer.style.transition = "none";
+    updateProjectPosition();
+  });
+
+  // Center the first project on load
+  updateProjectPosition();
 });
 
-rightArrow.addEventListener("click", () => {
-  const maxScroll = projectsContainer.scrollWidth - projectsContainer.offsetWidth;
-  scrollPosition = Math.min(maxScroll, scrollPosition + scrollAmount);
-  projectsContainer.style.transform = `translateX(-${scrollPosition}px)`;
-});
+
+
+
 
 
 // validation for contact form
@@ -53,3 +82,4 @@ if (!name || !email || !phone || !message) {
   e.preventDefault();
 }
 });
+
