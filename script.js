@@ -19,6 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector("nav");
+
+  menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("show"); // Toggle the "show" class
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
   const leftArrow = document.querySelector(".left-arrow");
   const rightArrow = document.querySelector(".right-arrow");
   const projectsContainer = document.querySelector(".projects-container");
