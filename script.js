@@ -17,16 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("nav");
 
   menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("show"); // Toggle the "show" class
+    nav.classList.toggle("show");
+    console.log("Menu toggled:", nav.classList.contains("show")); // Debug log
   });
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const leftArrow = document.querySelector(".left-arrow");

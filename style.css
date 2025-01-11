@@ -27,6 +27,8 @@ body {
 
 /*! Header */
 header {
+  position: relative;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -198,16 +200,18 @@ transition: transform 0.3s ease-in-out;
   }
 
   nav {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #333;
-    width: 100%;
-    display: none;
+    display: none; /* Hide by default */
     flex-direction: column;
     align-items: center;
+    background-color: #333;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    right: 0;
+    width: 100%;
     padding: 1rem 0;
+    z-index: 1000;
   }
+
 
   nav ul {
     flex-direction: column;
