@@ -4,6 +4,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
+}
+::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in browsers like Chrome, Edge, and Safari */
+}
+
+
 
 body {
   font-family: Arial, sans-serif;
@@ -11,8 +20,10 @@ body {
   background-color: #f8f9fa;
   color: #333;
   overflow-x: hidden; /* Ensures no horizontal scrollbars */
-
+  overflow-y: scroll;
 }
+
+
 
 /*! Header */
 header {
