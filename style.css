@@ -191,12 +191,12 @@ transition: transform 0.3s ease-in-out;
     width: 100%;
   }
   header {
-    flex-direction: column; /* Stack logo and nav vertically */
+    flex-direction: row; /* Stack logo and nav vertically */
     padding: 1rem; /* Adjust padding */
   }
   header nav ul {
-    flex-direction: column; /* Stack nav items vertically */
-    align-items: center;
+    flex-direction: row; /* Stack nav items vertically */
+  
   }
   header nav ul li {
     margin: 0.5rem 0; /* Add spacing between links */
