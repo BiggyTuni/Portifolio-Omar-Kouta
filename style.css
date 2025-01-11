@@ -474,7 +474,7 @@ transition: transform 0.3s ease-in-out;
 
 .contact-form button {
   width: 100%;
-  background-color: #00bcd4;
+  background-color: #414141;
   color: white;
   border: none;
   padding: 0.7rem 1rem;
@@ -484,5 +484,19 @@ transition: transform 0.3s ease-in-out;
 }
 
 .contact-form button:hover {
-  background-color: #0097a7;
+  background-color: #000000;
 }
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem; /* Adjust text size */
+}
+
+.icon img {
+  width: 20px; /* Adjust icon size */
+  height: 20px;
+  display: inline-block;
+}
+
