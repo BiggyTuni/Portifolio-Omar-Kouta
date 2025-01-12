@@ -321,15 +321,24 @@ transition: transform 0.3s ease-in-out;
 
 .tooltip {
   position: absolute;
-  top: 110%;
-  left: 50%;
+  bottom: -30px; /* Position tooltip below the container */
+  left: 50%; /* Center tooltip horizontally */
   transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
-  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for tooltip */
+  color: white; /* Tooltip text color */
+  padding: 0.5rem 1rem;
   border-radius: 5px;
-  display: none;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  white-space: nowrap; /* Prevents tooltip text from wrapping */
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Ensures it doesn't occupy space when hidden */
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 3; /* Ensure tooltip appears above other elements */
+}
+
+.project-item:hover .tooltip {
+  opacity: 1; 
+  visibility: visible; 
 }
 
 .skill-item:hover .tooltip {
@@ -338,7 +347,7 @@ transition: transform 0.3s ease-in-out;
 
 /* Projects Section */
 #projects {
-  padding: 3rem; /* Increase padding for better spacing */
+  padding: 3rem 1rem 5rem;
   background-color: #f9f9f9; /* Neutral background */
   text-align: center;
   height: 400px; /* Increase height */
@@ -379,9 +388,10 @@ transition: transform 0.3s ease-in-out;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  overflow: hidden;
+  overflow: visible;
   margin: 1rem; /* Adjust spacing between items */
   position: relative;
+  text-align: center;
 }
 
 .project-link {
